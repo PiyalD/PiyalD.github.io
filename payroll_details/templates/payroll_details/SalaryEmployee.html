@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/dashboard.css" />
+    <meta charset="UTF-8">
+    <title>Salary Calculation</title>
+    <style>
+        #content-main {
+        padding: 0px 50px 75px 38px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <!-- Header -->
+        <div id="header">
+            <div id="branding">
+                <h1 id="site-name"><a href="/">Payroll Management System</a></h1>
+            </div>
+
+            <div id="user-tools">
+                Welcome,
+                <strong>adminHR</strong>.
+                <a href="/payroll_details/">View site</a> /
+                <a href="/admin">Modify records</a> /
+                <a href="/admin/password_change/">Change password</a> /
+                <a href="/admin/logout/">Log out</a>
+            </div>
+        </div>
+    <div id="content-main">
+        <br><br><h1>{{ salitem.salary_calculation}}</h1>
+**************************************************************************************************************************************************************
+
+<br><br>
+        <b>SALARY STRUCTURE</b> for the Month : <b>{{ salitem.salary_month }}</b> and Year : <b>{{ salitem.salary_year }}</b> for Employee :
+<br>
+<p>
+    <ul>
+        <li><b>Employee ID :</b> {{ employee.e_id }}<br></li>
+        <li><b>First Name :</b> {{ employee.e_fname }}<br></li>
+        <li><b>Middle Name :</b> {{ employee.e_mname }}<br></li>
+        <li><b>Last Name :</b> {{ employee.e_lname }}<br></li>
+        <li><b>Age :</b> {{ employee.e_age }}<br></li>
+        <li><b>Phone :</b> {{ employee.e_phone }}<br></li>
+        <li><b>Email :</b> {{ employee.e_email }}<br></li>
+        <li><b>CTC p.a. :</b> Rs. {{ employee.e_CTC_Year }}<br></li>
+    </ul>
+</p>
+        <br><br>
+        <b><u>SALARY STATEMENT :</u></b><br>
+        <br><b>CTC per year :</b> Rs. {{ salitem.CTC_Year }}
+        <br><b>CTC per month :</b> Rs. {{ salitem.CTC_Monthly }}
+        <br><br>
+        <b><u>EARNINGS :</u></b><br>
+        <br><b>Basic :</b> Rs. {{ salitem.basic_salary }}
+        <br><b>Dearness Allowance(DA) :</b> Rs. {{ salitem.da_salary }}
+        <br><b>House Rent Allowance(HRA) :</b> Rs. {{ salitem.hra_salary }}
+        <br><b>Conveyance Allowance(CA) :</b> Rs. {{ salitem.ca_salary }}
+        <br><b>Other Allowance :</b> Rs. {{ salitem.other_allowances }}
+        <br><b>Total Earning :</b> Rs. {{ salitem.total_earning }}
+        <br><br>
+        <b><u>DEDUCTIONS :</u></b><br>
+        <br><b>Provident Fund(PF) :</b> Rs. {{ salitem.pf_salary }}
+        <br><b>Professional Tax(PT) :</b> Rs. {{ salitem.pt_salary }}
+        <br><b>Tax Deducted at Source(TDS) :</b> Rs. {{ salitem.tds_salary }}
+        <br><b>Other Deductions :</b> Rs. {{ salitem.other_deductions }}
+        <br><b>Total Deductions :</b> Rs. {{ salitem.total_deductions }}
+        <br><b>Total Take-away Salary :</b> Rs. {{ salitem.total }}
+        <br><br><b><u>LEAVE DETAILS :</u></b><br>
+        <br><b>Number of working days : </b>{{ salitem.no_of_days }}
+        <br><b>Number of days leave :</b> {{ salitem.no_of_days_leave }}
+        <br><b>Amount to be deducted :</b> Rs. {{ salitem.amount_to_deduct_for_leave }}
+        <br><b>Net Take-away Salary :</b> Rs. {{ salitem.nettotal }}
+<br><br>
+<h1>TOTAL : {{ salitem.nettotal }}</h1>
+    <h2>Mail the payslip to the employee?</h2>
+    <form action="mail" method="post">{% csrf_token %}
+        <label for="mailid">Send Mail to employee mail address.</label><br>
+        <input type="hidden" id="mailid" name="mailid" value="{{ salitem.emp.e_email }}">
+
+        <label for="msg">With all the details of monthly salary. Click below.</label><br>
+        <input type="hidden" id="msg" name="msg" value="{{ salitem.statement }}">
+
+
+        <label for="month"></label><br>
+        <input type="hidden" id="month" name="month" value="{{ salitem.salary_month }}">
+
+        <label for="year"></label><br>
+        <input type="hidden" id="year" name="year" value="{{ salitem.salary_year }}"><br>
+
+        <input type="submit" value="Mail">
+    </form>
+    <br>
+    <a href="../empid{{employee.e_id}}/salary">Go back</a><br>
+**************************************************************************************************************************************************************
+</div>
+    </div>
+</body>
+</html>

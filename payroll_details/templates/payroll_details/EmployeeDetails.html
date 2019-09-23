@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/dashboard.css" />
+    <meta charset="UTF-8">
+    <title>Employee Details</title>
+    <style>
+        #content-main {
+        padding: 0px 50px 75px 38px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <!-- Header -->
+        <div id="header">
+            <div id="branding">
+                <h1 id="site-name"><a href="/">Payroll Management System</a></h1>
+            </div>
+
+            <div id="user-tools">
+                Welcome,
+                <strong>adminHR</strong>.
+                <a href="/payroll_details/">View site</a> /
+                <a href="/admin">Modify records</a> /
+                <a href="/admin/password_change/">Change password</a> /
+                <a href="/admin/logout/">Log out</a>
+            </div>
+        </div>
+    <div id="content-main">
+        <br>
+        <a href="../">Go back</a><br>
+    <h2>Details for Employee id: {{ employee.e_id }}</h2>
+    <p><ul>
+        <li><b>Employee ID :</b> {{ employee.e_id }}<br></li>
+        <li><b>First Name :</b> {{ employee.e_fname }}<br></li>
+        <li><b>Middle Name :</b> {{ employee.e_mname }}<br></li>
+        <li><b>Last Name :</b> {{ employee.e_lname }}<br></li>
+        <li><b>Age :</b> {{ employee.e_age }}<br></li>
+        <li><b>Phone :</b> {{ employee.e_phone }}<br></li>
+        <li><b>Email :</b> {{ employee.e_email }}<br></li>
+        <li><b>CTC p.a. :</b> Rs. {{ employee.e_CTC_Year }}<br></li>
+        <li><a href="/payroll_details/empid{{employee.e_id}}/salary">Salary for Employee ID : {{employee.e_id}}</a></li>
+    </ul></p>
+    </div>
+    </div>
+</body>
+</html>

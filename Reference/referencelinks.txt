@@ -1,0 +1,30 @@
+https://quikchex.in/salary-structures-india-need-know/
+https://nevonprojects.com/online-employee-payroll-management-system-project/
+https://www.saralpaypack.com/blogs/payslip-format/
+https://hrxpert.in/Index.html
+https://www.coverfox.com/personal-finance/tax/tds/tds-on-salary/
+
+https://docs.djangoproject.com/en/2.2/ref/class-based-views/base/#templateview
+
+https://docs.djangoproject.com/en/2.2/ref/models/fields/#django.db.models.Field.default
+https://docs.djangoproject.com/en/2.2/ref/models/fields/#model-field-types
+https://docs.djangoproject.com/en/2.0/topics/db/models/#model-methods
+https://docs.djangoproject.com/en/2.2/ref/contrib/admin/
+https://docs.djangoproject.com/en/2.2/ref/models/fields/
+https://docs.djangoproject.com/en/2.2/ref/templates/language/
+https://django.readthedocs.io/en/2.2.x/howto/custom-template-tags.html
+https://docs.djangoproject.com/en/2.2/topics/forms/
+
+
+https://stackoverflow.com/questions/41932634/how-to-split-the-string-in-django-template
+https://www.w3schools.com/tags/tag_datalist.asp
+http://david.feinzeig.com/blog/2013/05/12/behold-the-power-of-default-how-to-set-the-default-argument-of-a-django-model-field-equal-to-a-class-method-using-lambda/
+https://stackoverflow.com/questions/38390177/what-is-a-noreversematch-error-and-how-do-i-fix-it
+https://stackoverflow.com/questions/33870800/send-integers-in-formdata
+https://stackoverflow.com/questions/4706255/how-to-get-value-from-form-field-in-django-framework
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/hidden
+https://github.com/groue/GRMustache/issues/46
+
+https://myaccount.google.com/lesssecureapps (gmail secure less)
+https://www.tutorialspoint.com/django/django_form_processing.htm (models form)
+https://www.youtube.com/watch?v=51mmqf5a0Ss (mail_part)

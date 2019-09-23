@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/dashboard.css" />
+    <meta charset="UTF-8">
+    <title>HR Homepage</title>
+    <style>
+        #content-main {
+        padding: 0px 50px 75px 38px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <!-- Header -->
+        <div id="header">
+            <div id="branding">
+                <h1 id="site-name"><a href="/">Payroll Management System</a></h1>
+            </div>
+
+            <div id="user-tools">
+                Welcome,
+                <strong>adminHR</strong>.
+                <a href="/payroll_details/">View site</a> /
+                <a href="../admin">Modify records</a> /
+                <a href="/admin/password_change/">Change password</a> /
+                <a href="/admin/logout/">Log out</a>
+            </div>
+        </div>
+
+    <div id="content-main">
+    <br>
+    <h1>This is the HR Homepage. WELCOME!!</h1>
+    <p>
+        Pay slips are provided to the employees to record their monthly pay and allowances. It is a document that
+        provides the employees with <br>
+        details of their incomes and deductions as it would differ from employee to employee.
+        Manual salary slips are outdated. <br>
+        Issuing manual salary slip and HR Management system might be time-consuming and might
+        consume a lot of paper.<br>
+        This Payroll Management System software will help in distribution of pay slips to employees
+        and also helps to<br> manage employee information efficiently.
+        <br><br>
+        <b>Following are the perks of using this software :</b>
+        <ol>
+            <li><b>Add Employee:</b> Add employees personal details, Salary details.</li>
+            <li><b>Add Attendance:</b> Update Monthly Attendance for Each Employee.</li>
+            <li><b>Salary Calculation:</b> Calculate salary and manage leaves.</li>
+            <li><b>Salary Slip:</b>Salary slip will be generated and automatically email will be sent.</li>
+            <li><b>Manage Employee:</b> Manage employee’s details.</li>
+        </ol>
+
+    </p>
+    <h2>Employee Details : </h2>
+    {% if all_employees|length > 0 %}
+        <ol>
+            {% for employee in all_employees %}
+                <li>Employee ID : <a href="/payroll_details/empid{{ employee.e_id }}/">{{ employee.e_id }} (Click here) </a></li>
+            {% endfor %}
+        </ol>
+    {% else %}
+        <p>
+            <b>No Employee records found. Please add the necessary details.</b>
+            <a href='../admin/payroll_details/employee/'>Click Here</a>
+        </p>
+    {% endif %}
+    </div>
+    </div>
+</body>
+</html>
